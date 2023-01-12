@@ -1,0 +1,93 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    height: 6rem;
+    text-align: center;
+    font-family: $fontLucida;
+    padding: 1rem;
+    h1, h2 {
+        font-size: 1rem;
+    }
+}
+
+
+ul {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background-color:$colorGrey ;
+    li {
+        padding:1rem;
+        list-style: none;
+        a {
+            text-decoration: none;
+            color: black;
+            font-family: $fontArial;
+        }
+    }
+}
+
+
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    .section, .first_article, .second_article{
+        margin: 1rem;
+        font-family: $fontArial;
+        h3{
+            color: $colorGreen;
+            margin-bottom: .5rem;
+        }
+    }
+}
+
+.aside {
+    display: flex; 
+    flex-flow: column nowrap;
+    .first_aside, .second_aside, .third_aside, .fourth_aside {
+        margin: .5rem;
+        border: 0.2rem solid $colorBlue;    
+        padding: 1rem;
+        h3{
+            color: $colorRed;
+        }
+    }
+}
+
+.footer {
+    height: 6rem;
+    text-align: center;
+    font-family: $fontLucida;
+    padding: 1rem;
+    background-color: rgba(128, 128, 128, 0.658);
+    margin-top: 3rem;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .main {
+        @include mediaWrap;
+    }
+
+    .aside {
+    @include mediaWrap;
+    }
+
+    .section,  .first_article, .second_article {
+        width: 30%;
+    }
+
+    .first_aside, .second_aside, .third_aside, .fourth_aside {
+        width: 45%;
+    }
+
+}
